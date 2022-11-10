@@ -9,6 +9,7 @@
 *.local
 *.ipynb
 *.ipynb_checkpoints
+*.test
 
 .python-version
 
