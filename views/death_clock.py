@@ -51,8 +51,8 @@ class DeathdayGenerator:
     def _adjust_dist_wrt_age(self, data: pd.DataFrame) -> pd.DataFrame:
         """Adjust distribution relative to age of user."""
         data_w_age = data[data["age"] > self.age].copy().reset_index()
-        data_w_age["pdata"] = data_w_age["all"] / data_w_age["all"].sum() * 100
-        data_w_age["cdata"] = data_w_age["pdata"].cumsum() * 100
+        data_w_age["pdata"] = data_w_age["all"] / data_w_age["all"].sum()
+        data_w_age["cdata"] = data_w_age["pdata"].cumsum()
 
         yr_diff = data_w_age["age"].max() - data_w_age["age"].min() + 1
         data_w_age["year"] = np.arange(self.today.year, self.today.year + yr_diff)
