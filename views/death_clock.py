@@ -1,7 +1,10 @@
 """Death clock generator and renderer."""
+import base64
 import calendar
 import datetime
+import io
 
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -9,6 +12,15 @@ import seaborn as sns
 
 COLOR = "w"
 DEFAULT_AGE = 38
+
+mpl.rcParams["text.color"] = COLOR
+mpl.rcParams["axes.labelcolor"] = COLOR
+mpl.rcParams["xtick.color"] = COLOR
+mpl.rcParams["ytick.color"] = COLOR
+mpl.rcParams["figure.facecolor"] = "k"
+mpl.rcParams["axes.facecolor"] = "k"
+mpl.rcParams["savefig.facecolor"] = "k"
+mpl.rcParams["font.family"] = "Andale Mono"
 
 
 class DeathdayGenerator:
@@ -101,4 +113,9 @@ class DeathdayGenerator:
             axis.spines["top"].set_color(COLOR)
             axis.spines["left"].set_color(COLOR)
             axis.spines["right"].set_color(COLOR)
-        return fig
+        img = io.BytesIO()
+        plt.savefig(img, format="png")
+        img.seek(0)
+        graph_url = base64.b64encode(img.getvalue().decode())
+        plt.close()
+        return f"data:image/png;base64,{graph_url}"

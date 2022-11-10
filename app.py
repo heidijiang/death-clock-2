@@ -46,12 +46,14 @@ def calculate():
         data=data,
     )
     death_generator.get_death_date(data)
+    img_file = death_generator.save_display(data)
     return render_template(
         "calculate.html",
         name=death_generator.name,
         age=death_generator.age,
         death_date=death_generator.printed_date(),
         death_age=death_generator.death_age,
+        img_file=img_file,
     )
 
 
