@@ -4,23 +4,47 @@ body {
     padding: 0;
     color: white;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
+    font-size: 11px;
     background: black;
     background-repeat: no-repeat;
     background-attachment: fixed;
     text-align: center;
 }
 
-form {
-    display: inline-block;
+
+input {
+    background: red;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    border: 5px solid red;
+    border-radius: 8px;
+    box-shadow: 0px;
+    text-shadow: none;
 }
 
-#wrapper .ui-input-text {
-    border: none;
-    border-color: transparent;
+*:focus {
+    outline: none;
+}
+
+input[type=submit] {
+    background: black;
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid red;
+    border-radius: 8px;
+    box-shadow: 0px;
+    text-shadow: none;
 }
 
 h1 {
     color: red;
     font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+    color: red;
+}
+
+h3 {
+    color: white;
 }
