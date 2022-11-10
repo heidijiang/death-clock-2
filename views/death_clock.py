@@ -116,6 +116,6 @@ class DeathdayGenerator:
         img = io.BytesIO()
         plt.savefig(img, format="png")
         img.seek(0)
-        graph_url = base64.b64encode(img.getvalue().decode())
+        graph_url = base64.b64encode(img.getvalue()).decode()
         plt.close()
         return f"data:image/png;base64,{graph_url}"
