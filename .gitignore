@@ -21,4 +21,4 @@ venv/
 
 # Pattern negation
 # Any files ignored earlier will be re-included if they match in this block
-/assets/**
+assets/**
