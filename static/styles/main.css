@@ -1,0 +1,26 @@
+/*general stuff*/
+body {
+    overflow: scroll;
+    padding: 0;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    background: black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+}
+
+#wrapper .ui-input-text {
+    border: none;
+    border-color: transparent;
+}
+
+h1 {
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+}

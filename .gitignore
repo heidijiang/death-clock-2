@@ -1,0 +1,25 @@
+.vscode/*
+*.bz2
+*.pkl
+*.csv
+*.png
+*.eps
+*.log
+*.html
+*.pyc
+*.local
+*.ipynb
+*.ipynb_checkpoints
+
+.python-version
+
+venv/
+
+.pytest_cache/
+.mypy_cache/
+*__pycache*
+
+# Pattern negation
+# Any files ignored earlier will be re-included if they match in this block
+!*/assets/**
+!*/tests/*/fixtures/**
